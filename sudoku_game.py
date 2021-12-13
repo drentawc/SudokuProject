@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import requests
 from functools import partial
 
-
 #Sudoku UI class to build tkinter frame to hold all of the other frames and make board
 class SudokuUI(tk.Frame):
     def __init__(self, container):
