@@ -1,13 +1,13 @@
-import tkinter as tk
 from bs4 import BeautifulSoup
-import requests
 from functools import partial
+import tkinter as tk
+import requests
 
 #Sudoku UI class to build tkinter frame to hold all of the other frames and make board
 class SudokuUI(tk.Frame):
     def __init__(self, container):
         super().__init__(container)
-
+         
         self.soup = SudokuWebScraper()
         self.board = self.soup.puzzle
 
@@ -40,7 +40,6 @@ class SudokuUI(tk.Frame):
             #     victory = tk.Toplevel(self)
             #     tk.Label(victory, text="Victory!").grid(row=0, column=0)
             #     tk.Button(victory, text="New Puzzle", command=partial(self.get_new_puzzle, self.current_difficulty)).grid(row=1, column=0)
-
 
         self.after(2000, self.check_victory)
 
@@ -269,7 +268,7 @@ class SudokuBoard(tk.Frame):
 def main():
     root = tk.Tk()
     root.title("Sudoku")
-    root.geometry("400x350")
+    root.geometry("500x400")
 
     root.columnconfigure(0, weight=2)
     root.columnconfigure(1, weight=1)
@@ -277,6 +276,7 @@ def main():
     frame = SudokuUI(root)
     frame.grid(row=0, column=1)
 
+    time.sleep(5)
     root.mainloop()
 
 if __name__ == '__main__':
