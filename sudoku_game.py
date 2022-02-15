@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from functools import partial
 import tkinter as tk
+import time
 import requests
 
 #Sudoku UI class to build tkinter frame to hold all of the other frames and make board
